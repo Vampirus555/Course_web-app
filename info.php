@@ -51,17 +51,7 @@ while($activity = mysqli_fetch_assoc($result)){
 
 
 
-// $Arr = mysqli_fetch_assoc($result);
-// $name_park = $Arr['NameOfPark'];
-// $activity_name = $Arr['CourseName'];
-// $description = $Arr['CoursesDescription'];
-// $time = $Arr['CoursesTimetable'];
-// $paid = $Arr['PaidService'];
-// $phone = $Arr['HelpPhone'];
-
 $title = "Сведения";
-
-
 
 
 $content ='
@@ -103,9 +93,3 @@ $content ='
 require("template.php");
 
 ?>
-
-
-
-
-
-

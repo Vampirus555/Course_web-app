@@ -14,7 +14,8 @@
         <div class="container">
             <?php if(isset($user) && $user != ""):?> 
                     <label>Добро пожаловать, <?=$_SESSION["name"]?>! Теперь вы можете увидеть подробную информацию об активностях парка.</label>
-                    <a href="logout.php">Выйти</a>
+                    <!-- <a href="logout.php">Выйти</a> -->
+                    <a href="logout.php"><button class="search-btn" >Выйти из аккаунта</button></a>
             <?php else:?>
             <form action="authpage.php" class="search-form">
                 <button class="search-btn" >Войти/Зарегистрироваться</button>

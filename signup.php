@@ -19,8 +19,36 @@ if (!empty($_POST)){
 
 
 $title = "Регистрация";
-$content = "
-<form method=\"POST\">
+$content = '
+<div class="auth">
+<div class="auth_header">
+    Регистрация
+</div>
+<form method="POST">
+    <div class="margin_5">
+        <input type="text" name="name" placeholder="Имя">
+    </div>
+    
+    <div class="margin_5">
+        <input type="text" name="login" placeholder="Логин">
+    </div>
+
+    
+    <div class="margin_5">
+        <input type="password" name="password" placeholder="Пароль">
+    </div>
+
+    
+    <div class="margin_5">
+        <button type="submit">Регистрация</button>
+    </div>
+</div>
+';
+
+require("template.php");
+
+?>
+<!-- <form method=\"POST\">
     <div>
         <label>ФИО</label>
         <input type=\"text\" name=\"name\">
@@ -39,9 +67,4 @@ $content = "
     <div>
         <button type=\"submit\">Регистрация</button>
     </div>
-</form>
-";
-
-require("template.php");
-
-?>
+</form> -->

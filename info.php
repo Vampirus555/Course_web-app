@@ -16,11 +16,11 @@ while($activity = mysqli_fetch_assoc($result)){
     
     $content1 .= '
     <div class="card">
+            <div class="card_header">
+            '.$activity['CourseName'].'
+            </div>
     <br id="all'.$count.'"/><table>
-        <tr>
-            <td>Название активности</td>
-            <td>'.$activity['CourseName'].'</td>
-        </tr>
+        
         <tr>
             <td>Описание</td>
             <td>'.$activity['CoursesDescription'].'</td>
@@ -41,7 +41,7 @@ while($activity = mysqli_fetch_assoc($result)){
     ';
     if(isset($user) && $user != ""){
         $content1 .= '
-        <a href="#close">свернуть</a><a href="#all'.$count.'">развернуть</a>
+        <a href="#close"><button class="margin_5, back">Cвернуть</button></a><a href="#all'.$count.'"><button class="margin_5, back">Развернуть</button></a>
         ';
     }
     $content1 .= "</div>";
@@ -56,31 +56,31 @@ $title = "Сведения";
 
 $content ='
 <div class="info">
-            <a href="main.php"><p>На страницу поиска</p></a>
+            
 
-            <div class="card">
+            <div class="park_card">
+                <div class="park_header">
+                '.$info['CommonName'].'
+                </div>
                 <table>
                     <tr>
-                        <td width="110">Название Парка</td>
-                        <td>'.$info['CommonName'].'</td>
+                        <td>Организация</td>
+                        <td>'.$info['BalanceholderComp'].'</td>
                     </tr>
                     <tr>
                         <td>Адрес</td>
                         <td>'.$info['Location'].'</td>
                     </tr>
                     <tr>
-                        <td>Организация</td>
-                        <td>'.$info['BalanceholderComp'].'</td>
-                    </tr>
-                    <tr>
                         <td>Сайт парка</td>
-                        <td>'.$info['ParkWebSite'].'</td>
+                        <td><a href="https://'.$info['ParkWebSite'].'">'.$info['ParkWebSite'].'</a></td>
                     </tr>
                     <tr>
                         <td>Телефон парка</td>
                         <td>'.$info['ParkPhone'].'</td>
                     </tr>
                 </table>
+                <a href="main.php"><button class="margin_5, back">На страницу поиска</button></a>
     
             </div>
 
@@ -88,7 +88,7 @@ $content ='
                 '.$content1.'
             </div>
 
-        </div>
+</div>
 ';
 require("template.php");
 

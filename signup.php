@@ -13,7 +13,7 @@ if (!empty($_POST)){
     );
     
     
-    header("Location: main.php");
+    header("Location: authpage.php");
 }
 
 
@@ -48,23 +48,3 @@ $content = '
 require("template.php");
 
 ?>
-<!-- <form method=\"POST\">
-    <div>
-        <label>ФИО</label>
-        <input type=\"text\" name=\"name\">
-    </div>
-    
-    <div>
-        <label>Логин</label>
-        <input type=\"text\" name=\"login\">
-    </div>
-    
-    <div>
-        <label>Пароль</label>
-        <input type=\"password\" name=\"password\">
-    </div>
-    
-    <div>
-        <button type=\"submit\">Регистрация</button>
-    </div>
-</form> -->

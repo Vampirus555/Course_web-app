@@ -4,7 +4,7 @@ $title = "Поиск активностей парка";
 $content ='
 <div class="finder">
             <div class="container_header">
-                <p>Узнайте об активностях интересующего вас парка.</p>
+                <p>Узнайте об активностях интересующего вас парка</p>
             </div>
             
                 <form action="info.php" method="POST" class="search-form">

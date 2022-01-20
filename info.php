@@ -1,5 +1,6 @@
 <?php
 require("connectdb.php");
+require("session.php");
 
 $result = mysqli_query($connect, "SELECT * FROM Activity_parks WHERE NameOfPark = '".$_POST["login"]."' ");
 $result1 = mysqli_query($connect, "SELECT * FROM Info_parks WHERE CommonName = '".$_POST["login"]."' ");
@@ -37,9 +38,13 @@ while($activity = mysqli_fetch_assoc($result)){
             <td>'.$activity['HelpPhone'].'</td>
         </tr>
     </table>
-    <a href="#close">свернуть</a><a href="#all'.$count.'">развернуть</a>
-</div>
     ';
+    if(isset($user) && $user != ""){
+        $content1 .= '
+        <a href="#close">свернуть</a><a href="#all'.$count.'">развернуть</a>
+        ';
+    }
+    $content1 .= "</div>";
     
     $count++;
 }
@@ -64,7 +69,7 @@ $content ='
             <a href="main.php"><p>На страницу поиска</p></a>
 
             <div class="card">
-            <br id="all0"/><table>
+                <table>
                     <tr>
                         <td width="110">Название Парка</td>
                         <td>'.$info['CommonName'].'</td>
@@ -74,8 +79,8 @@ $content ='
                         <td>'.$info['Location'].'</td>
                     </tr>
                     <tr>
-                        <td>Время работы</td>
-                        <td>'.$info['WorkingHours'].'</td>
+                        <td>Организация</td>
+                        <td>'.$info['BalanceholderComp'].'</td>
                     </tr>
                     <tr>
                         <td>Сайт парка</td>
@@ -86,7 +91,7 @@ $content ='
                         <td>'.$info['ParkPhone'].'</td>
                     </tr>
                 </table>
-                <a href="#close">свернуть</a><a href="#all0">развернуть</a>
+    
             </div>
 
             <div style="display: flex; flex-wrap: wrap;">

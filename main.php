@@ -1,4 +1,5 @@
 <?php
+require("session.php");
 $title = "Поиск активностей парка";
 $content ='
 <div class="finder">

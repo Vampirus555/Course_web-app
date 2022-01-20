@@ -6,14 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php $title; ?></title>
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">   -->
+    
+ 
 </head>
 <body>
 <header class="header">
         <div class="container">
-            
+            <?php if(isset($user) && $user != ""):?> 
+                    <label>Добро пожаловать, <?=$_SESSION["name"]?>! Теперь вы можете увидеть подробную информацию об активностях парка.</label>
+                    <a href="logout.php">Выйти</a>
+            <?php else:?>
+            <form action="authpage.php" class="search-form">
+                <button class="search-btn" >Войти/Зарегистрироваться</button>
+            </form>
+            <?php endif;?>
         </div>
     </header>
     <main>

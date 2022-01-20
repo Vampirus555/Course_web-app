@@ -103,3 +103,14 @@ table{
 td{
     border: 1px solid black;
 }
+
+
+/* чтобы страница "не подпрыгивала" к id */
+[id^="all"] {
+    position: fixed;  
+  }
+  [id^="all"]:target + table a[href^="#all"],
+  [id^="all"]:not(:target) + table tbody tr:nth-of-type(n+3),  /* 4 - это порядковый номер tr, после которого строки будут изначально удалены (включительно) */
+  [id^="all"]:not(:target) + table a[href="#close"] {
+    display: none;
+  }

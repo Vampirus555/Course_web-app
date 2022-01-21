@@ -2,11 +2,11 @@
 require("connectdb.php");
 require("session.php");
 
-$result = mysqli_query($connect, "SELECT * FROM Activity_parks WHERE NameOfPark = '".$_POST["login"]."' ");
-$result1 = mysqli_query($connect, "SELECT * FROM Info_parks WHERE CommonName = '".$_POST["login"]."' ");
+$result = mysqli_query($connect, "SELECT * FROM Activity_parks WHERE NameOfPark LIKE '%".$_POST["park"]."%' ");
+$result1 = mysqli_query($connect, "SELECT * FROM Info_parks WHERE CommonName LIKE '%".$_POST["park"]."%' ");
 
 $info = mysqli_fetch_assoc($result1);
-
+$centr = $info['geodata_center'];
 $content1 = '';
 
 $count = 1;
@@ -57,7 +57,7 @@ $title = "Сведения";
 $content ='
 <div class="info">
             
-
+        <div style="display: flex; flex-wrap: wrap; position: center;">
             <div class="park_card">
                 <div class="park_header">
                 '.$info['CommonName'].'
@@ -83,6 +83,9 @@ $content ='
                 <a href="main.php"><button class="margin_5, back">На страницу поиска</button></a>
     
             </div>
+            <div class ="card" id="map">
+            </div>
+        </div>
 
             <div style="display: flex; flex-wrap: wrap;">
                 '.$content1.'

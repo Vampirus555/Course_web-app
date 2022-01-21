@@ -8,7 +8,7 @@ $content ='
             </div>
             
                 <form action="info.php" method="POST" class="search-form">
-                    <input type="text" name="login" class="search-field" placeholder="Введите название парка...">
+                    <input type="text" name="park" class="search-field" placeholder="Введите название парка...">
                     <button class="search-btn" >Найти</button>
                 </form>
                 

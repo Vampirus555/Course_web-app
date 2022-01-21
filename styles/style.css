@@ -105,6 +105,7 @@ main{
     text-align: center;
     color: #f8f4f4;
     font-size: 20px;
+    font-weight: 600;
     
 }
 .container-header p {
@@ -161,3 +162,8 @@ td{
   [id^="all"]:not(:target) + table a[href="#close"] {
     display: none;
   }
+  #map {
+    height: 220px; 
+   
+    
+}

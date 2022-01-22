@@ -1,13 +1,19 @@
 .header{
     background-color: #C9ABAB;
     color: white;
-    padding: 40px 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer{
     background-color: #C9ABAB;
     color: white;
-    padding: 40px 0;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body{
@@ -81,11 +87,20 @@ main{
     text-align: center;
     color: #f8f4f4;
     font-size: 25px;
+    font-weight: 600;
+
+}
+.container_header_info{
     
+    text-align: center;
+    color: #f8f4f4;
+    font-size: 18px;
+    font-style: italic;
 }
 
+
 .auth_header{
-    height: 40px;
+    
     text-align: center;
     color: #f8f4f4;
     font-size: 30px;
@@ -93,7 +108,7 @@ main{
 }
 .park_header{
     background-color: #B08484;
-    height: 40px;
+    
     text-align: center;
     color: #f8f4f4;
     font-size: 30px;
@@ -101,16 +116,25 @@ main{
     border-radius: 10px 10px 0 0;
 }
 .card_header{
-    height: 40px;
+    
     text-align: center;
     color: #f8f4f4;
     font-size: 20px;
     font-weight: 600;
+
+}
+.warning{
     
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+
 }
 .container-header p {
     margin-top: 0;
   }
+  
 
 .card{
     background-color: #C9A6A6;

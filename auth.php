@@ -16,6 +16,6 @@ if(!$result || mysqli_num_rows($result) == 0){
 session_start();
 $_SESSION = mysqli_fetch_assoc($result);
 
-header("Location: main.php");
+header("Location: index.php");
 
 ?>

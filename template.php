@@ -20,19 +20,19 @@
        
 
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: 'Собственный значок метки',
-            balloonContent: 'Это красивая метка'
-        }, {
-            // Опции.
-            // Необходимо указать данный тип макета.
-            iconLayout: 'default#image',
-            // Своё изображение иконки метки.
-            iconImageHref: 'images/Icon.png',
-            // Размеры метки.
-            iconImageSize: [30, 35],
-            // Смещение левого верхнего угла иконки относительно
-            // её "ножки" (точки привязки).
-            iconImageOffset: [-5, -38]
+            hintContent: '<?php echo $info['CommonName'] ?>',
+            
+                }, {
+                // Опции.
+                // Необходимо указать данный тип макета.
+                iconLayout: 'default#image',
+                // Своё изображение иконки метки.
+                iconImageHref: 'images/Icon.png',
+                // Размеры метки.
+                iconImageSize: [30, 35],
+                // Смещение левого верхнего угла иконки относительно
+                // её "ножки" (точки привязки).
+                iconImageOffset: [-5, -38]
         });
 
         myMap.geoObjects.add(myPlacemark);
@@ -43,9 +43,9 @@
 </head>
 <body>
 <header class="header">
-        <div class="container">
+        
             <?php if(isset($user) && $user != ""):?> 
-                    <label>Добро пожаловать, <?=$_SESSION["name"]?>! Теперь вы можете увидеть подробную информацию об активностях парка.</label>
+                    <label>Добро пожаловать, <?=$_SESSION["name"]?>! </label>
                     <!-- <a href="logout.php">Выйти</a> -->
                     <a href="logout.php"><button class="search-btn" >Выйти из аккаунта</button></a>
             <?php else:?>
@@ -53,7 +53,7 @@
                 <button class="search-btn" >Войти/Зарегистрироваться</button>
             </form>
             <?php endif;?>
-        </div>
+        
     </header>
     <main>
         <p><?=$content;?></p>
@@ -62,9 +62,7 @@
     
 
     <footer class="footer">
-        <div class="container">
-            
-        </div>
+        <p>&copy; Романов В.С. 201-362. Год: <?php echo date('Y'); ?></p>
     </footer>
 </body>
 </html>

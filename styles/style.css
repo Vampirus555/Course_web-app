@@ -5,6 +5,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    border-bottom: 1px solid #FFFFE0;
 }
 
 .footer{
@@ -24,7 +28,7 @@ body{
 
 main{
     min-width: 200px;
-    min-height: 803px;
+    min-height: 91vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,10 +43,15 @@ main{
     margin-top: 50px;
 }
 
+.label{
+    border: 3px solid #ba8e8e;
+    padding:  0 5px;
+}
+
 .info{
     background-color: #B08484;
     width: 900px;
-    
+    padding-top: 80px;
 }
 
 .search-form {
@@ -51,20 +60,32 @@ main{
 .search-field {
     background-color: #E4BBBB;
     flex-grow: 1;
-    height: 60px;
+    height: 40px;
     border: 5px solid #E4BBBB;
     box-sizing: border-box;
     padding: 0 20px;
     font-size: 100%;
     
 }
+
+.content-field {
+    background-color: #E4BBBB;
+    flex-grow: 1;
+
+    border: 5px solid #E4BBBB;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 100%;
+    width: 80%;
+    height: 10vh;
+}
 .search-btn {
     padding: 0 20px;
     font-size: 100%;
     font-weight: bold;
-    background-color: #C9A6A6;
-    border: 3px solid #C9A6A6;
-    border-left: none;
+    background-color: #ba8e8e;
+    border: 3px solid #ba8e8e;
+    
     color: #f8f4f4;
     cursor: pointer;
     box-sizing: border-box;
@@ -131,7 +152,7 @@ main{
     font-weight: 600;
 
 }
-.container-header p {
+.container_header p {
     margin-top: 0;
   }
   
@@ -150,6 +171,16 @@ main{
     border: 3px solid #E4BBBB;
     border-radius: 10px 10px 0 0;
     text-align: center;
+}
+
+.note_card{
+    background-color: #C9A6A6;
+    width: 380px;
+    margin: 30px;
+    border: 3px solid #E4BBBB;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    /* height: 20vh; */
 }
 
 table{
@@ -172,10 +203,11 @@ td{
     margin: 5px;
 }
 .back{
-    background-color: #E4BBBB;
-    
+    background-color: #E4BBBB;   
 }
-
+.delete{
+    background-color: #CD5C5C;   
+}
 
 /* чтобы страница "не подпрыгивала" к id */
 [id^="all"] {

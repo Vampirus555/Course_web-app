@@ -31,20 +31,21 @@ $title = "Мои заметки";
 
 $content = '
 <div class="info">
-    <div style="display:flex; align-items: center; justify-content: center;">
-        <div class="card">
+    <div style="display:flex; flex-wrap: wrap;">
+        <div class="note_card">
+            <div class="park_header">Добавить заметку</div>
             <form method="POST">
-                <div>
+                <div class="margin_5">
                     
-                    <input type="text" name="parkName" placeholder="Название парка">
+                    <input type="text" name="parkName" placeholder="Название парка" class="search-field">
                 </div>
                 
                 <div>
-                    <textarea name="content" placeholder="Поле для заметок"> </textarea>
+                    <textarea name="content" placeholder="Поле для заметок"  class="content-field"></textarea>
                 </div>
                 
                 <div>
-                    <button type="submit" name="push">Добавить заметку</button>
+                    <button type="submit" name="push" class="margin_5, back">Добавить заметку</button>
                 </div>
             </form>
         </div>
@@ -53,10 +54,16 @@ $content = '
             <table>
                 '.$content1.'
             </table>
+            ';
+            if($content1 != ""){
+                $content .='<a href="delete.php"><button class="margin_5, delete">Удалить заметки</button></a>';
+            }
+            $content .='
+            </div>
+            </div>
         </div>
-    </div>
-</div>
-';
+            ';
+     
 
 
 

@@ -11,7 +11,7 @@
     <script type="text/javascript">
         ymaps.ready(function () {
         var myMap = new ymaps.Map('map', {
-            center: <?php echo $centr ?>  , 
+            center: <?php echo $info['geodata_center'] ?>  , 
             zoom: 13
         }, {
             searchControlProvider: 'yandex#search'
@@ -20,8 +20,8 @@
        
 
         myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-            hintContent: '<?php echo $info['CommonName'] ?>',
-            
+            hintContent: 'Мои заметки',
+            balloonContent: 'Количество ваших заметок: <?php echo $count_notes['countN'] ?>'
                 }, {
                 iconLayout: 'default#image',
                 iconImageHref: 'images/Icon.png',
@@ -37,12 +37,13 @@
 </head>
 <body>
 <header class="header">
-        
             <?php if(isset($user) && $user != ""):?> 
-                    <label>Добро пожаловать, <?=$_SESSION["name"]?>! </label>
-                    <!-- <a href="logout.php">Выйти</a> -->
-                    <a href="logout.php"><button class="search-btn" >Выйти из аккаунта</button></a>
+                    <label class ="label">Добро пожаловать, <?=$_SESSION["name"]?>!</label>
+            <?php endif;?>
+            <a href="index.php"><button class="search-btn" >Главная</button></a>
+            <?php if(isset($user) && $user != ""):?> 
                     <a href="notes.php"><button class="search-btn" >Мои заметки</button></a>
+                    <a href="logout.php"><button class="search-btn" >Выйти из аккаунта</button></a>
             <?php else:?>
             <form action="authpage.php" class="search-form">
                 <button class="search-btn" >Войти/Зарегистрироваться</button>

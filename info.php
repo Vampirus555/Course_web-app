@@ -4,18 +4,19 @@ require("session.php");
 
 $result = mysqli_query($connect, "SELECT * FROM Activity_parks WHERE NameOfPark LIKE '%".$_POST["park"]."%' ");
 $result1 = mysqli_query($connect, "SELECT * FROM Info_parks WHERE CommonName LIKE '%".$_POST["park"]."%' ");
+if(isset($user) && $user != ""){
+    $result2 = mysqli_query($connect, "SELECT COUNT(user_id) AS countN FROM notes WHERE user_id =  ".$_SESSION["user_id"]." ");
+    $count_notes = mysqli_fetch_assoc($result2);
+}
 
 
 
 $info = mysqli_fetch_assoc($result1);
 
-
-$centr = $info['geodata_center'];
-    
-
-$content1 = '';
-
 $count = 1;
+
+
+
 
 
 if(empty($_POST["park"])){
@@ -90,7 +91,7 @@ if((!$result || mysqli_num_rows($result) == 0) && (!$result1 || mysqli_num_rows(
     
     <div class="info">
                 
-            <div style="display: flex; flex-wrap: wrap; position: center;">
+            <div style="display: flex; flex-wrap: wrap;">
                 <div class="park_card">
                     <div class="park_header">
                     '.$info['CommonName'].'

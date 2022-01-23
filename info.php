@@ -11,6 +11,8 @@ $info = mysqli_fetch_assoc($result1);
 
 
 $centr = $info['geodata_center'];
+    
+
 $content1 = '';
 
 $count = 1;
@@ -60,7 +62,7 @@ if(!$result || mysqli_num_rows($result) == 0){
         ';
         if(isset($user) && $user != ""){
             $content1 .= '
-            <a href="#close"><button class="margin_5, back">Cвернуть</button></a><a href="#all'.$count.'"><button class="margin_5, back">Развернуть</button></a>
+                <a href="#close"><button class="margin_5, back">Cвернуть</button></a><a href="#all'.$count.'"><button class="margin_5, back">Развернуть</button></a>
             ';
         }
         $content1 .= "</div>";
@@ -85,12 +87,14 @@ if((!$result || mysqli_num_rows($result) == 0) && (!$result1 || mysqli_num_rows(
     ';
 }else{
     $content ='
+    
     <div class="info">
                 
             <div style="display: flex; flex-wrap: wrap; position: center;">
                 <div class="park_card">
                     <div class="park_header">
                     '.$info['CommonName'].'
+    
                     </div>
                     
                     <table>
@@ -118,6 +122,7 @@ if((!$result || mysqli_num_rows($result) == 0) && (!$result1 || mysqli_num_rows(
                     
                 </div>
                 <div class ="card" id="map">
+                    
                 </div>
             </div>
 

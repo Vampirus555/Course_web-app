@@ -11,7 +11,7 @@
     <script type="text/javascript">
         ymaps.ready(function () {
         var myMap = new ymaps.Map('map', {
-            center: <?php echo $centr ?>,
+            center: <?php echo $centr ?>  , 
             zoom: 13
         }, {
             searchControlProvider: 'yandex#search'
@@ -23,15 +23,9 @@
             hintContent: '<?php echo $info['CommonName'] ?>',
             
                 }, {
-                // Опции.
-                // Необходимо указать данный тип макета.
                 iconLayout: 'default#image',
-                // Своё изображение иконки метки.
                 iconImageHref: 'images/Icon.png',
-                // Размеры метки.
                 iconImageSize: [30, 35],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
                 iconImageOffset: [-5, -38]
         });
 
@@ -48,6 +42,7 @@
                     <label>Добро пожаловать, <?=$_SESSION["name"]?>! </label>
                     <!-- <a href="logout.php">Выйти</a> -->
                     <a href="logout.php"><button class="search-btn" >Выйти из аккаунта</button></a>
+                    <a href="notes.php"><button class="search-btn" >Мои заметки</button></a>
             <?php else:?>
             <form action="authpage.php" class="search-form">
                 <button class="search-btn" >Войти/Зарегистрироваться</button>
